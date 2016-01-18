@@ -1,0 +1,1 @@
+{"version":3,"file":"style.css","sources":["style.scss"],"sourcesContent":[".some {\n    .sass {\n        background: blue;\n        color: green;\n    }\n}\n"],"mappings":"AAAA,KAAK,CACD,KAAK,CAAC;EACF,UAAU,EAAE,IAAK;EACjB,KAAK,EAAE,KAAM,GAChB","names":[],"sourceRoot":"/source/"}
