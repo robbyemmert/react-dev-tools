@@ -1,4 +1,4 @@
-console.log('Hello World');
+console.log('Hello Thar');
 
 export class SomeClass {
     constructor() {

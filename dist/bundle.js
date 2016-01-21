@@ -54,7 +54,7 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	console.log('Hello World');
+	console.log('Hello Thar');
 	
 	var SomeClass = exports.SomeClass = function () {
 	    function SomeClass() {
