@@ -21,6 +21,9 @@ app.get('/', function(req, res){
     res.render('index', {reactRoot: reactHtml});
 });
 
+// This should be prioritized last
+app.use(express.static('dist'));
+
 app.listen(Config.port, function(){
     console.log(`listening on port ${Config.port}!`);
 });
