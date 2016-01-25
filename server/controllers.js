@@ -1,7 +1,10 @@
-var fio = require('./fileio.js');
-var Template = require('./modules/template.js');
+'use strict'
+var React = require('react');
+var ReactDOMServer = require('react-dom/server');
 
-exports.index = function(req, res) {
-    fio.loadTemplate('index.html');
-    res.send('check log');
+var AppRoot = React.createFactory(require('../src/index.js').AppRoot);
+
+exports.index = function(req, res){
+    var reactHtml = ReactDOMServer.renderToString(AppRoot({}));
+    res.render('index', {reactRoot: reactHtml});
 }

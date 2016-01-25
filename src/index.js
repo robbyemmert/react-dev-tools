@@ -1,24 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestComponent from './components/testComponent.js';
+import { TestComponent } from './components/testComponent.js';
 
-ReactDOM.render(
-    <TestComponent />,
-    document.getElementById('reactRoot')
-);
-
-var person = 'Christine';
-console.log(`Hello ${person}`);
-
-export class SomeClass {
-    constructor() {
-        console.log('constructed!');
-    }
-
-    heyo(){
-        console.log('hey there');
+export class AppRoot extends React.Component {
+    render(){
+        return (
+            <div className="test-list">
+                <TestComponent />
+                <TestComponent />
+                <TestComponent />
+            </div>
+        )
     }
 }
-
-var inst = new SomeClass();
-inst.heyo();

@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var watch = require('gulp-watch');
 var clean = require('gulp-clean');
+var gls = require('gulp-live-server');
 
 var ACTIONS = {
     gulpTask: function(taskName){
@@ -17,6 +18,11 @@ var ACTIONS = {
             return gulp.src(glob)
             .pipe(clean());
         };
+    },
+    reloadServer: function(server){
+        return function(){
+            return
+        }
     }
 };
 
@@ -87,3 +93,17 @@ gulp.task('watch', ['build'], function(){
     .on('change', ACTIONS.gulpTask('assets'))
     .on('add', ACTIONS.gulpTask('assets'))
 });
+
+gulp.task('dev', ['watch'], function(){
+    var server = gls.new('./server.js');
+    server.start();
+
+    watch('./dist/**/*', function(file){
+        console.log('watching dist ', file.path);
+        server.notify.apply(server, [file]);
+    });
+
+    watch(['./server.js', './server/**/*'], function(file){
+        server.start.bind(server);
+    });
+})
