@@ -12,7 +12,9 @@ app.engine('html', mustache());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/dist');
 
-app.get('/', Controllers.index);
+if (Config.preRender) {
+    app.get('/', Controllers.index);
+}
 
 // This should be prioritized last
 app.use(express.static('dist'));
