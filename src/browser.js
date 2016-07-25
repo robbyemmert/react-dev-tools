@@ -7,9 +7,6 @@ ReactDOM.render(
     document.getElementById('reactRoot')
 );
 
-var person = 'Christine';
-console.log(`Hello ${person}`);
-
 export class SomeClass {
     constructor() {
         console.log('constructed!');
